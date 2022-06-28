@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Kanit:wght@300;400&display=swap');
+
+/* reset */
+* {
+	font-family: 'Kanit';
+	color: rgb(240, 240, 216);
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62,5%;
+}
+
+h1 {
+	font-family: 'Cookie', cursive;
+	font-size: 4em;
+}
+
+nav {
+	background-color: rgba(30, 34, 26, 0.7);
+	position: sticky;
+	padding: 3px 25px;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+}
+
+    nav ul {
+		list-style: none;
+		display: flex;
+	}
+
+	    nav ul li {
+		    margin-right: 40px;
+	    }
+	    
+	        nav ul li a {
+			    font-size: 1.5rem;
+			    text-decoration: none;
+			    color: rgb(240, 240, 216);
+			    font-family: 'Kanit', sans-serif;
+		    }
+
+             /* hover */
+		    nav ul li a:hover {
+			    color: rgb(96, 120, 72);
+                font-weight: 600;
+		    }
+
+
+body {
+	background-image: url(../img/verde-musgo.webp);
+    background-repeat: no repeat;
+	background-attachment: fixed;
+	overflow-x: hidden;
+}
+
+header img {
+	width: 100%;
+}
+
+p {
+	font-family: 'Kanit', sans-serif;
+	font-size: 1.5rem;
+	font-style: italic;
+	color: rgb(240, 240, 216);
+	/* line-height: 2.5rem;
+	text-transform: uppercase; */
+}
+
+/* ---------- mobilefirst ---------- */
+/* definir el grid layout - 1 col y rows auto*/
+
+.contenedor {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   grid-template-areas: 
+   "chino"
+   "nina"
+   "gogo"
+   "babo"
+   "wilbur"
+   "robin";
+}
+
+#nav {
+    grid-area: chino;
+}
+
+#header {
+    grid-area: nina;
+}
+
+#main {
+    grid-area: gogo;
+}
+
+#categorias {
+	grid-area: babo;
+	display: flex;
+	justify-content: center;
+	margin: 10%;
+}
+
+#aside {
+    grid-area: wilbur;
+	display: flex;
+	justify-content: center;
+}
+
+#footer {
+    grid-area: robin;
+}
+
+/* selectores de clase */
+.text-bold {
+	font-weight: 600;
+}
+.text-med {
+	font-weight: 400;
+	font-size: 3rem;
+	text-decoration: underline;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+}
+.text-light {
+	font-weight: 200;
+}
+.text-center {
+	text-align: center;
+}
+.bg-dark {
+	background-color: rgba(96, 72, 72, .5);
+}
+.text-green {
+	color: rgb(96, 120, 72);
+}
+.newsletter {
+	margin: 3%;
+	padding: 3%;
+}
+.msj {
+	margin: 3%;
+}
+.mrg {
+	margin-left: 3%;
+}
+.logo {
+	width: 240px;
+}
+.quienSoy {
+	margin: 10%;
+	margin-top: 5%;
+	text-align: center;
+}
+
+/* Box model */
+.faq__questionsAndAnswers {
+	width: 80%;
+	height: auto;
+	margin: 20px auto;
+	padding: 20px 60px;
+	border: dotted rgb(240, 240, 216) 2px;
+}
+
+/* Home */
+.titulo {
+	display: flex;
+	justify-content: center;
+}
+.info {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	margin: 15px;
+	text-align: center;
+	font-weight: 200px;
+}
+.fotonav img {
+	border-radius: 100px;
+}
+.galeria {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.galeria img {
+	border-radius: 100px;
+    padding: 5%;
+}
+
+/* Aside */
+.redondo img {
+	border-radius: 150px;
+	margin: 30px;
+	width: 90%;
+	
+}
+
+/* Faq */
+.faq-padding {
+	padding: 10px;
+}
+
+/* Footer */
+.pie {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+/*----------media queries----------*/
+
+@media (min-width: 768px) {
+    .contenedor {
+		grid-template-columns: 20vw 80vw;
+		grid-template-rows: repeat(4, auto);
+		grid-template-areas: 
+		"chino chino"
+		"nina nina"
+		"wilbur gogo"
+		"babo babo"
+		"robin robin";
+	}
+
+	#aside {
+		grid-area: wilbur;
+		display: flex;
+		flex-direction: column;
+		align-self: flex-start;
+		margin-top: 10vh;
+    }
+
+	#categorias {
+		grid-area: babo;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+}
+
+@media (min-width: 1024px) {
+    .contenedor {
+		grid-template-columns: 15vw 70vw 15vw;
+		grid-template-areas: 
+		"chino chino chino"
+		"nina nina nina"
+		"babo gogo wilbur"
+		"robin robin robin";
+	}
+    
+
+
+    #aside img {
+		width: 70%;
+	}
+    
+    
+    #categorias {
+		display: flex;
+		align-items: flex-start;
+		margin-top: 50%;
+	}
+	.galeria {
+		display: flex;
+		justify-content: center;
+	}
+	.galeria img {
+		width: 100%;
+    }
+}
+
+/*----------animaciones----------*/
+
